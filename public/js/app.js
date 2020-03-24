@@ -1953,10 +1953,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      companies: []
+      companies: [],
+      company: {
+        name: ''
+      },
+      displayForm: false
     };
   },
   mounted: function mounted() {
@@ -1966,6 +1983,14 @@ __webpack_require__.r(__webpack_exports__);
       console.log(res.data);
       _this.companies = res.data;
     });
+  },
+  methods: {
+    addCompany: function addCompany() {
+      console.log(this.company.name);
+    },
+    showForm: function showForm() {
+      this.displayForm = !this.displayForm;
+    }
   }
 });
 
@@ -37510,7 +37535,76 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c("div", { staticClass: " text-center shadow" }, [
+      _c("h2", { staticClass: "py-2" }, [_vm._v("Companies")]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-dark m-2 ",
+          on: {
+            click: function($event) {
+              return _vm.showForm()
+            }
+          }
+        },
+        [_vm._v("Add New Company")]
+      )
+    ]),
+    _vm._v(" "),
+    _vm.displayForm
+      ? _c("div", { staticClass: "shadow p-5" }, [
+          _c("h5", { staticClass: "text-center" }, [_vm._v("New Company:")]),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.addCompany($event)
+                }
+              }
+            },
+            [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", [_vm._v("Company's Name")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.company.name,
+                      expression: "company.name"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "Enter Company's name" },
+                  domProps: { value: _vm.company.name },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.company, "name", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-block btn-primary",
+                  attrs: { type: "submit" }
+                },
+                [_vm._v("Add")]
+              )
+            ]
+          )
+        ])
+      : _vm._e(),
     _vm._v(" "),
     _c(
       "div",
@@ -37535,16 +37629,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: " text-center shadow" }, [
-      _c("h2", { staticClass: "text-success" }, [_vm._v("Companies")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
