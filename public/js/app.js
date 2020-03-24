@@ -52476,9 +52476,7 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _components_views_home_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/views/home.vue */ "./resources/js/components/views/home.vue");
-/* harmony import */ var _components_views_about_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/views/about.vue */ "./resources/js/components/views/about.vue");
+/* harmony import */ var _router_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./router.js */ "./resources/js/router.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -52487,23 +52485,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); //https://medium.com/@weehong/laravel-5-7-vue-vue-router-spa-5e07fd591981
-// import Router from './router.js';   separate
-// import Vue from 'vue';
 
 
-Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
-
-
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
-  mode: 'history',
-  routes: [{
-    path: '/about',
-    component: _components_views_about_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }, {
-    path: '/',
-    component: _components_views_home_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
-  }]
-});
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -52523,7 +52506,7 @@ Vue.component('router-outlet', __webpack_require__(/*! ./components/RouterTempla
 
 var app = new Vue({
   el: '#vue-app',
-  router: router
+  router: _router_js__WEBPACK_IMPORTED_MODULE_0__["default"]
 });
 
 /***/ }),
@@ -52745,6 +52728,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_home_vue_vue_type_template_id_61671f2a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/router.js":
+/*!********************************!*\
+  !*** ./resources/js/router.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _components_views_home_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/views/home.vue */ "./resources/js/components/views/home.vue");
+/* harmony import */ var _components_views_about_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/views/about.vue */ "./resources/js/components/views/about.vue");
+
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+
+var routes = [{
+  path: '/about',
+  component: _components_views_about_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+}, {
+  path: '/',
+  component: _components_views_home_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+}];
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
+  mode: 'history',
+  routes: routes
+});
+/* harmony default export */ __webpack_exports__["default"] = (router);
 
 /***/ }),
 

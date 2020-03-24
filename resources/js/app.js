@@ -11,21 +11,9 @@ window.Vue = require('vue');
 //https://medium.com/@weehong/laravel-5-7-vue-vue-router-spa-5e07fd591981
 
 
-// import Router from './router.js';   separate
+import router from './router.js';   
 
-// import Vue from 'vue';
-import VueRouter from 'vue-router';
-Vue.use(VueRouter);
 
-import Home from './components/views/home.vue';
-import About from './components/views/about.vue';
-const router = new VueRouter({
-  mode: 'history',
-  routes: [
-  	{ path: '/about', component: About },
-    { path: '/', component: Home },
-  ]
-});
 
 
 /**
