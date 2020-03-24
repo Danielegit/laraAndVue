@@ -6,7 +6,7 @@ window.Vue = require('vue');
 
 import router from './router.js';   
 
-
+Vue.component('navbar', require('./components/Navbar.vue').default);
 Vue.component('router-outlet', require('./components/RouterTemplate.vue').default);
 
 

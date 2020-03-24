@@ -24,11 +24,12 @@
                         @endif
                     @endauth
                 </div>
-            @endif
+            @endif            
+        </div>
 
-            <div id="vue-app">
-                <router-outlet></router-outlet>
-            </div>
+        <div id="vue-app">
+            <navbar></navbar>
+            <router-outlet></router-outlet>
         </div>
         <script src="{{ mix('js/app.js') }}"></script>
     </body>

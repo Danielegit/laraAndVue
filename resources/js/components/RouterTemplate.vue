@@ -1,7 +1,7 @@
 <template>
-    <div class="container py-4">
-        <div class="row justify-content-center">
-            <div class="col-md-8">      
+    <div class=" py-4">
+        <div class=" container-fluid">
+            <div class="">      
                 <router-view></router-view>
             </div>
         </div>
