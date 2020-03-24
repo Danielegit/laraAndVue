@@ -52486,7 +52486,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // import Router from './router.js';   separate
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); //https://medium.com/@weehong/laravel-5-7-vue-vue-router-spa-5e07fd591981
+// import Router from './router.js';   separate
 // import Vue from 'vue';
 
 
@@ -52494,7 +52495,7 @@ Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
-  // mode: 'history',
+  mode: 'history',
   routes: [{
     path: '/about',
     component: _components_views_about_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
