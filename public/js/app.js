@@ -1918,10 +1918,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -37300,7 +37296,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container py-4" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-8" }, [_c("router-view")], 1)
     ])
@@ -52477,33 +52473,12 @@ module.exports = function(module) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _router_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./router.js */ "./resources/js/router.js");
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); //https://medium.com/@weehong/laravel-5-7-vue-vue-router-spa-5e07fd591981
 
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
 Vue.component('router-outlet', __webpack_require__(/*! ./components/RouterTemplate.vue */ "./resources/js/components/RouterTemplate.vue")["default"]);
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
 var app = new Vue({
   el: '#vue-app',
   router: _router_js__WEBPACK_IMPORTED_MODULE_0__["default"]
@@ -52740,24 +52715,23 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _components_views_home_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/views/home.vue */ "./resources/js/components/views/home.vue");
-/* harmony import */ var _components_views_about_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/views/about.vue */ "./resources/js/components/views/about.vue");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _components_views_home_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/views/home.vue */ "./resources/js/components/views/home.vue");
+/* harmony import */ var _components_views_about_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/views/about.vue */ "./resources/js/components/views/about.vue");
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
+Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]); //Views
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
 
 var routes = [{
   path: '/about',
-  component: _components_views_about_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  component: _components_views_about_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
 }, {
   path: '/',
-  component: _components_views_home_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  component: _components_views_home_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
 }];
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   mode: 'history',
   routes: routes
 });

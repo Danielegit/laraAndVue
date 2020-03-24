@@ -1,12 +1,8 @@
 <template>
-    <div class="container">
+    <div class="container py-4">
         <div class="row justify-content-center">
-            <div class="col-md-8">
-
-                    
-                        <router-view></router-view>
-                    
-            
+            <div class="col-md-8">      
+                <router-view></router-view>
             </div>
         </div>
     </div>
