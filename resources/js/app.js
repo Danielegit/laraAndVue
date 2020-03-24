@@ -8,6 +8,25 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+
+
+// import Router from './router.js';   separate
+
+// import Vue from 'vue';
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
+
+import Home from './components/views/home.vue';
+import About from './components/views/about.vue';
+const router = new VueRouter({
+  // mode: 'history',
+  routes: [
+  	{ path: '/about', component: About },
+    { path: '/', component: Home },
+  ]
+});
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -19,7 +38,7 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('router-outlet', require('./components/RouterTemplate.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -28,5 +47,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app',
+    el: '#vue-app',
+    router: router
 });
